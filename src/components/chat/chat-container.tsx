@@ -10,35 +10,16 @@ export function Chat() {
   //     console.log("executou");
   //   }
   return (
-    <section className=" bg-gray-200 flex-1 overflow-auto py-3 relative">
+    <section className=" bg-gray-200 flex-1 overflow-auto  py-3 relative">
       <div className="container ">
-        <Message type="request" content="Olá" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
-        <Message type="response" content="Olá tudo bem?" />
+        <Message
+          type="request"
+          content="OláOláOláOláOláOláOl
+          áOláOláOláOláOláOláOláOláOláOláOláOláO
+          láOláOláOláOláOláOláOláOláOláOláOláOláOláOláOláOláOláOláO
+          láOláOláOláOláOláOláOláOláOláOláOláOláOláOláOláOláOláOláOláOláOláOl
+          áOláOláOláOláOláOláOláOláOláOláOláOláOláOláOláOláOlá"
+        />
       </div>
     </section>
   );
