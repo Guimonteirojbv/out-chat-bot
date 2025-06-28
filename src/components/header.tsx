@@ -1,9 +1,13 @@
+"use client";
 import { BotMessageSquareIcon, Trash2 } from "lucide-react";
 import { Button } from "./ui/button";
+import { useChat } from "@/contexts/ChatContext";
 
 export function Header() {
+  const { clearChat } = useChat();
+
   return (
-    <header className=" py-3 px-3 shadow-md sticky w-full ">
+    <header className=" py-3 px-3 shadow-lg sticky w-full ">
       <div className="container flex justify-between items-center">
         <div className="flex  items-center gap-2 ">
           <div className="w-10 h-10 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center">
@@ -16,6 +20,7 @@ export function Header() {
         <Button
           className="flex items-center cursor-pointer hover:bg-amber-50"
           aria-label="limpar conversa"
+          onClick={clearChat}
         >
           <Trash2 />
           <span className="hidden sm:inline">Limpar conversa</span>
