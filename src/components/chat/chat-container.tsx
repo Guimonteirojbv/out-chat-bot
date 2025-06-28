@@ -5,7 +5,7 @@ import { useChat } from "@/contexts/ChatContext";
 import { LoadingChat } from "../loading-chat";
 
 export function Chat() {
-  const { messages, loading, error } = useChat();
+  const { messages, loading } = useChat();
   //   const ChatEndRef = React.useRef<HTMLDivElement>(null);
 
   //   function ScrollToBottom() {
