@@ -1,5 +1,6 @@
 "use server";
 
+import { ErrorHandler } from "@/errors/error-handler";
 import { GeminiService } from "@/services/geminiService";
 
 export async function generateContentAction(prompt: string) {
@@ -12,12 +13,13 @@ export async function generateContentAction(prompt: string) {
 
     const generatedText = await GeminiService.generateContent(prompt);
     return generatedText;
-  } catch (error: unknown) {
+  } catch (error) {
     console.error("Error in Server Action");
-    throw new Error(
-      `Erro ao processar sua requisição: ${
-        error.message || "Erro desconhecido."
-      }`
-    );
+
+    if (error instanceof ErrorHandler) {
+      return error.message;
+    } else {
+      return "Ocorreu um erro desconhecido";
+    }
   }
 }
