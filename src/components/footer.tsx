@@ -6,6 +6,7 @@ import { Textarea } from "./ui/textarea";
 import React from "react";
 import { useChat } from "@/contexts/ChatContext";
 import { generateContentAction } from "@/actions/geminiActions";
+import { ErrorHandler } from "@/errors/error-handler";
 
 export function Footer() {
   const [prompt, setPrompt] = React.useState("");
@@ -31,10 +32,12 @@ export function Footer() {
       const generatedText = await generateContentAction(prompt);
       setPrompt("");
 
-      addBotResponse(generatedText);
-    } catch (error: any) {
+      if (generatedText) addBotResponse(generatedText);
+    } catch (error: unknown) {
       const errorMessage =
-        error instanceof Error ? error.message : "Ocorreu um erro inesperado.";
+        error instanceof ErrorHandler
+          ? error.message
+          : "Ocorreu um erro inesperado.";
       setError(errorMessage);
       addBotResponse(`Erro: ${errorMessage}`);
     } finally {
@@ -46,10 +49,11 @@ export function Footer() {
     <footer className="py-10 border-t-1">
       <form className="flex gap-4 container" onSubmit={handleSubmit}>
         <Textarea
-          className="resize-none"
+          className="resize-none text-sm sm:text-md max-h-[200px]"
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
             setPrompt(e.target.value)
           }
+          value={prompt}
           onKeyDown={onKeyDown}
           placeholder="Digite sua mensagem...(Enter para enviar, Shift+Enter para nova linha)"
         />
