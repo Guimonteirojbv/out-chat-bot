@@ -15,7 +15,6 @@ export function Footer() {
 
   function onKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (event.key === "Enter") {
-      event.preventDefault(); // se quiser evitar pular linha
       handleSubmit(event);
     }
   }
