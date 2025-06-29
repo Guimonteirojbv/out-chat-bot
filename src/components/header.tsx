@@ -1,10 +1,47 @@
 "use client";
-import { BotMessageSquareIcon, Trash2 } from "lucide-react";
+import { BotMessageSquareIcon, Trash2, Download } from "lucide-react";
 import { Button } from "./ui/button";
 import { useChat } from "@/contexts/ChatContext";
 
 export function Header() {
   const { clearChat } = useChat();
+
+  async function HandleDownload() {
+    const data = localStorage.getItem("messages");
+
+    if (!data) {
+      return;
+    }
+
+    const dataToSend = JSON.parse(data);
+
+    if (dataToSend.length == 0) {
+      return;
+    }
+
+    const response = await fetch("/download", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(dataToSend),
+    });
+
+    if (!response.ok) {
+      alert("Erro ao gerar arquivo para download");
+      return;
+    }
+
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+
+    console.log(url);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "chat.json";
+    a.click();
+    window.URL.revokeObjectURL(url);
+  }
 
   return (
     <header className=" py-3 px-3 shadow-lg sticky w-full ">
@@ -14,17 +51,25 @@ export function Header() {
             <BotMessageSquareIcon />
           </div>
 
-          <h1 className="text-xl font-bold text-gray-900">OurChatBot</h1>
+          <h1 className="text-sm  sm:text-xl font-bold text-gray-900  ">
+            OurChatBot
+          </h1>
         </div>
 
-        <Button
-          className="flex items-center cursor-pointer hover:bg-amber-50"
-          aria-label="limpar conversa"
-          onClick={clearChat}
-        >
-          <Trash2 />
-          <span className="hidden sm:inline">Limpar conversa</span>
-        </Button>
+        <div className="flex items-center gap-1.5">
+          <Button onClick={HandleDownload}>
+            <Download />
+          </Button>
+
+          <Button
+            className="flex items-center "
+            aria-label="limpar conversa"
+            onClick={clearChat}
+          >
+            <Trash2 />
+            <span className="hidden sm:inline">Limpar conversa</span>
+          </Button>
+        </div>
       </div>
     </header>
   );
