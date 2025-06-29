@@ -28,11 +28,16 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = React.useState<boolean>(false);
   const [error, setError] = React.useState<string | null>(null);
 
+  React.useEffect(() => {
+    getStorageChat();
+  }, []);
+
   const addMessage = (text: string, sender: "user" | "bot" = "user") => {
     setMessages((prevMessages) => [
       ...prevMessages,
       { text, sender, timestamp: new Date() },
     ]);
+    storageChat();
   };
 
   const addBotResponse = (text: string) => {
@@ -40,12 +45,29 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
       ...prevMessages,
       { text, sender: "bot", timestamp: new Date() },
     ]);
+    storageChat();
   };
 
   const clearChat = () => {
     setMessages([]);
+    removeHistoryChat();
   };
-  // O objeto de valor fornecido pelo contexto deve corresponder exatamente a `ChatContextType`.
+
+  const removeHistoryChat = () => {
+    localStorage.removeItem("messages");
+  };
+
+  const storageChat = () => {
+    localStorage.setItem("messages", JSON.stringify(messages));
+  };
+
+  const getStorageChat = () => {
+    const historyMessages = localStorage.getItem("messages");
+
+    if (historyMessages) setMessages(JSON.parse(historyMessages));
+    else return;
+  };
+
   const contextValue: ChatContextType = {
     messages,
     loading,
