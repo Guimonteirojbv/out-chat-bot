@@ -1,7 +1,13 @@
-export default function Home() {
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { Chat } from "@/components/chat/chat-container";
+
+export default function ChatPage() {
   return (
-    <div>
-      <h1>olá mundo</h1>
-    </div>
+    <main className="flex flex-col min-h-screen max-h-screen overflow-auto">
+      <Header />
+      <Chat />
+      <Footer />
+    </main>
   );
 }
