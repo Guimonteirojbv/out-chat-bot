@@ -5,7 +5,7 @@ import { Send } from "lucide-react";
 import { Textarea } from "./ui/textarea";
 import React from "react";
 import { useChat } from "@/contexts/ChatContext";
-import { generateContentAction } from "@/actions/geminiActions";
+import { generateFromFeatherless } from "@/actions/generate";
 import { ErrorHandler } from "@/errors/error-handler";
 
 export function Footer() {
@@ -28,7 +28,7 @@ export function Footer() {
     setError(null);
 
     try {
-      const generatedText = await generateContentAction(prompt);
+      const generatedText = await generateFromFeatherless(prompt);
       setPrompt("");
 
       if (generatedText) addBotResponse(generatedText);
