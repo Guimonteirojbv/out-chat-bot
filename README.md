@@ -1,9 +1,9 @@
 <h1 align="center" id="top"> OurChatBot</h1>
 
-<img src="" width='100%' alt="Imagem 1"/>
+<img src="https://github.com/user-attachments/assets/3a2620c1-6a5d-4b58-8137-05ecac5d8be9" width='100%' alt="Imagem 1"/>
  
 
-> 🔎 Chat Bot, <a href=""> Link do projeto </a>
+> 🔎 Chat Bot, <a href="https://out-chat-hmbntk1ki-guimonteirojbvs-projects.vercel.app/"> Link do projeto </a>
 
 ## :page_facing_up: Desafio Técnico: ChatBot
 
@@ -14,6 +14,7 @@ Este desafio tem como objetivo testar as minhas habilidades com Next, TypeScript
 • Ao acessar a página inicial é possível interagir com o ChatBot
 • Ao enviar a mensagem para o chat. receber uma resposta
 • Ao clicar no botão "Limpar conversa", deve-se limpar o chat.
+• Ao clicar no botão de download é possível baixar o histórico da conversa
   
 ## 🎯 Steps
 
@@ -69,12 +70,12 @@ Este é um breve guia sobre a estrutura de pastas do projeto. Aqui está uma vis
 ## 📁 Screens Mobile
 
 <div style="display: flex; justify-content: space-between;">
-
+<img src="" width='100%' alt="Imagem 1"/>
 </div>
 
 ## 📁 Screens Desktop
 <div style="display: flex; justify-content: space-between;">
-
+<img src="" width='100%' alt="Imagem 1"/>
 </div>
 
 
