@@ -54,7 +54,7 @@ export function Footer() {
           }
           value={prompt}
           onKeyDown={onKeyDown}
-          placeholder="Digite sua mensagem...(Enter para enviar, Shift+Enter para nova linha)"
+          placeholder="Digite sua mensagem..."
         />
         <Button
           variant="default"
