@@ -3,7 +3,7 @@
 <img src="https://github.com/user-attachments/assets/3a2620c1-6a5d-4b58-8137-05ecac5d8be9" width='100%' alt="Imagem 1"/>
  
 
-> 🔎 Chat Bot, <a href="https://out-chat-hmbntk1ki-guimonteirojbvs-projects.vercel.app/"> Link do projeto </a>
+> 🔎 Chat Bot, <a href="https://out-chat-hmbntk1ki-guimonteirojbvs-projects.vercel.app/" target="blank"> Link do projeto </a>
 
 ## :page_facing_up: Desafio Técnico: ChatBot
 
@@ -70,24 +70,26 @@ Este é um breve guia sobre a estrutura de pastas do projeto. Aqui está uma vis
 ## 📁 Screens Mobile
 
 <div style="display: flex; justify-content: space-between;">
-<img src="" width='100%' alt="Imagem 1"/>
+  <img src="https://github.com/user-attachments/assets/85263e08-f833-42ee-a700-704fa271255a" width='100%' max-heigth='100px' alt="Imagem 1"/>
 </div>
 
 ## 📁 Screens Desktop
 <div style="display: flex; justify-content: space-between;">
-<img src="" width='100%' alt="Imagem 1"/>
+ <img src="https://github.com/user-attachments/assets/38e9f6e4-cd84-4b4f-896f-006edabb3eb1" width='100%' alt="Imagem 1"/>
 </div>
 
 
 ## 🔗 Links
 | Ambiente     |  URL                             |
 | ---          |  ---                             |
-| Local        |  http://localhost:3000/         |                 |
+| Local        |  http://localhost:3000/         |                 
+| Prod         | https://our-chat-bot-gui.vercel.app/ |
 
 
 ## :white_check_mark: Requerimentos
 
 Antes de iniciar :checkered_flag:, você precisa ter o [Git](https://git-scm.com) e o [Node](https://nodejs.org/en/) instalados.
+Você também precisa criar um arquivo .env na raíz do projeto utilizando como referência o arquivo .env.example, após isso crie um Acess Token no Huggin Face [HugginFace acess token](https://huggingface.co/settings/tokens) e use esse acess token como valor para HF_API_TOKEN. 
 
 ## :checkered_flag: Iniciar
 
@@ -97,7 +99,6 @@ $ git clone https://github.com/Guimonteirojbv/out-chat-bot.git
 
 # Acessar
 $ cd out-chat-bot
-$ git checkout guilherme-monteiro-rodrigues
 
 # Instalar dependências
 $ npm i
